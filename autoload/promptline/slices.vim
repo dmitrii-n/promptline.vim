@@ -48,7 +48,9 @@ fun! promptline#slices#python_virtualenv(...)
 endfun
 
 fun! promptline#slices#conda_env(...)
-  return '$CONDA_DEFAULT_ENV'
+  return {    
+        \'function_name': '__promptline_conda_env',    
+        \'function_body': promptline#slices#conda_env#function_body()} 
 endfun
 
 fun! promptline#slices#git_status(...)
